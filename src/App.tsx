@@ -5,9 +5,10 @@ function App() {
 
 
   return (
-    <div className="w-screen h-screen bg-neutral-200 max-w-4xl" >
+    <div className="w-screen h-screen bg-neutral-200 " >
       {/* <ImageCard/> */}
       <TodoCard/>
+      
     </div>
   )
 }
