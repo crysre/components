@@ -1,14 +1,14 @@
-// import { ImageCard } from "./component/ImageCard"
+import { ImageCard } from "./component/ImageCard"
 import { TodoCard } from "./component/TodoCard"
 
 function App() {
 
 
   return (
-    <div className="w-screen h-screen bg-neutral-200 " >
-      {/* <ImageCard/> */}
-      <TodoCard/>
+    <div className=" bg-neutral-200 " >
       
+      <TodoCard/>
+      <ImageCard/>
     </div>
   )
 }
