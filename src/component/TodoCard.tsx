@@ -1,6 +1,6 @@
 import { motion } from "motion/react"
 import { useState } from "react"
-import skull from "../Assets/Skull.jpg"
+import skull from "../Assets/skull.jpg"
 import one from "../Assets/one.jpg"
 import two from "../Assets/two.jpg"
 
