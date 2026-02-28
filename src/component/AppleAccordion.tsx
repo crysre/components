@@ -21,12 +21,12 @@ const imagesObj: Record<string, string> = {
 export const AppleAccordion = () => {
   const [open, setOpen] = useState<string | null>(null);
   return (
-    <div className=" w-full h-screen  flex flex-col justify-center items-center bg-[#0f0f10]">
+    <div className=" w-full h-500  flex flex-col justify-center items-center bg-[#0f0f10]">
       <p className="text-white font-bold text-6xl tracking-wide w-[92%] pb-12 pl-24">
         Take a closer look
       </p>
       <AnimatePresence>
-        <div className=" overflow-hidden relative w-[94%] h-[80%] rounded-4xl  bg-black  ">
+        <div className=" overflow-hidden relative w-[94%] h-[50%] rounded-4xl  bg-black  ">
           <motion.img
             key={open}
             initial={{
@@ -143,7 +143,7 @@ const SpecsCard = ({
         damping: 25,
       }}
       onClick={() => setOpen(open === title ? null : title)}
-      className=" my-2 hover:bg-[#272729] flex w-fit transition-all duration-300 ease-in-out   bg-[#1e1e20] rounded-4xl  px-4 pr-10  justify-center items-center py-4 font-bold tracking-wide text-xl text-[#f5f5f7]"
+      className=" my-4 hover:bg-[#272729] flex w-fit transition-all duration-300 ease-in-out   bg-[#1e1e20] rounded-4xl  px-4 pr-10  justify-center items-center py-4 font-bold tracking-wide text-xl text-[#f5f5f7]"
     >
       <motion.p
         initial={{
