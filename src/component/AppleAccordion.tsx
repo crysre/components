@@ -22,7 +22,7 @@ export const AppleAccordion = () => {
   const [open, setOpen] = useState<string | null>(null);
   return (
     <div className=" w-full h-500  flex flex-col justify-center items-center bg-[#0f0f10]">
-      <p className="text-white font-bold text-6xl tracking-wide w-450 py-20 px-24">
+      <p className="text-white font-bold text-6xl tracking-wide w-[92%] py-20 px-24">
         Take a closer look
       </p>
       <AnimatePresence>
