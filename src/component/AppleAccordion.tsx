@@ -26,7 +26,7 @@ export const AppleAccordion = () => {
         Take a closer look
       </p>
       <AnimatePresence>
-        <div className=" overflow-hidden relative w-450 h-237.5 rounded-4xl  bg-black  ">
+        <div className=" overflow-hidden relative w-[94%] h-[50%] rounded-4xl  bg-black  ">
           <motion.img
             key={open}
             initial={{
