@@ -51,12 +51,12 @@ export const AppleAccordion = () => {
               duration: 0.5,
               ease: easeInOut,
             }}
-            className="w-full h-full object-cover"
+            className="w-full"
             src={open ? imagesObj[open] : ""}
             alt=""
           />
 
-          <div className=" w-[26rem] absolute bottom-20 left-22">
+          <div className=" w-[24%] absolute bottom-20 left-22">
             {accordionArray.map((x, index) => (
               <SpecsCard
                 open={open}
