@@ -51,7 +51,7 @@ export const AppleAccordion = () => {
               duration: 0.5,
               ease: easeInOut,
             }}
-            className="w-full"
+            className="w-full h-full object-cover"
             src={open ? imagesObj[open] : ""}
             alt=""
           />
