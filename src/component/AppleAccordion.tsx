@@ -143,7 +143,7 @@ const SpecsCard = ({
         damping: 25,
       }}
       onClick={() => setOpen(open === title ? null : title)}
-      className=" my-2 hover:bg-[#272729] inline-flex transition-all duration-300 ease-in-out   bg-[#1e1e20] rounded-4xl  px-4 pr-10  justify-center items-center py-4 font-bold tracking-wide text-xl text-[#f5f5f7]"
+      className=" my-2 hover:bg-[#272729] flex w-fit transition-all duration-300 ease-in-out   bg-[#1e1e20] rounded-4xl  px-4 pr-10  justify-center items-center py-4 font-bold tracking-wide text-xl text-[#f5f5f7]"
     >
       <motion.p
         initial={{
