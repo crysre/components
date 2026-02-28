@@ -179,7 +179,7 @@ const SpecsCard = ({
         damping: 25,
       }}
       //   onClick={() => setOpen(open === title ? null : title)}
-      className=" my-2 py-10 backdrop-blur-2xl inline-flex  bg-gray-500/20 rounded-4xl px-8  text-xl text-[#f5f5f7]"
+      className=" my-2 py-6 backdrop-blur-2xl inline-flex  bg-gray-500/20 rounded-4xl px-8  text-xl text-[#f5f5f7]"
     >
       <p>
         <span className=" font-bold">{title}.</span> {description}
