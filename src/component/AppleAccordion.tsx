@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { AnimatePresence, easeInOut, motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 import colors_blue from "../Assets/appleImage/colors_blue__ct0n7mo30vwy_medium.jpg";
 import unibody from "../Assets/appleImage/unibody__eublzdgtajo2_large_2x.jpg";
@@ -21,25 +21,55 @@ const imagesObj: Record<string, string> = {
 export const AppleAccordion = () => {
   const [open, setOpen] = useState<string | null>(null);
   return (
-    <div className=" w-full h-screen  flex flex-col justify-center items-center bg-[#0f0f10]">
-      <p className="text-white font-bold text-6xl tracking-wide w-450 p-24">
+    <div className=" w-full h-500  flex flex-col justify-center items-center bg-[#0f0f10]">
+      <p className="text-white font-bold text-6xl tracking-wide w-450 py-20 px-24">
         Take a closer look
       </p>
-      <div className=" overflow-hidden relative w-450 h-237.5 rounded-4xl  bg-black  ">
-        <img className="w-full" src={open ? imagesObj[open] : ""} alt="" />
-        <div className=" w-106 absolute bottom-40 left-22">
-          {accordionArray.map((x, index) => (
-            <SpecsCard
-              open={open}
-              setOpen={setOpen}
-              key={index}
-              icon={<PlusIcon />}
-              title={x.title}
-              description={x.description}
-            />
-          ))}
+      <AnimatePresence>
+        <div className=" overflow-hidden relative w-450 h-237.5 rounded-4xl  bg-black  ">
+          <motion.img
+            key={open}
+            initial={{
+              x: -100,
+              opacity: 0,
+              scale: 0.85,
+              filter: "blur(10px)",
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+            }}
+            exit={{
+              x: 120,
+              opacity: 0,
+              scale: 0.98,
+              filter: "blur(10px)",
+            }}
+            transition={{
+              duration: 0.5,
+              ease: easeInOut,
+            }}
+            className="w-full"
+            src={open ? imagesObj[open] : ""}
+            alt=""
+          />
+
+          <div className=" w-106 absolute bottom-40 left-22">
+            {accordionArray.map((x, index) => (
+              <SpecsCard
+                open={open}
+                setOpen={setOpen}
+                key={index}
+                icon={<PlusIcon />}
+                title={x.title}
+                description={x.description}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </AnimatePresence>
     </div>
   );
 };
@@ -113,9 +143,32 @@ const SpecsCard = ({
         damping: 25,
       }}
       onClick={() => setOpen(open === title ? null : title)}
-      className=" my-2 gap-4 hover:bg-[#272729] inline-flex transition-all duration-300 ease-in-out cursor-pointer  bg-[#1e1e20] rounded-4xl h-16.25 pl-4 pr-10  justify-center items-center py-4 font-bold tracking-wide text-xl text-[#f5f5f7]"
+      className=" my-2  hover:bg-[#272729] inline-flex transition-all duration-300 ease-in-out   bg-[#1e1e20] rounded-4xl  px-4 pr-10  justify-center items-center py-5 font-bold tracking-wide text-xl text-[#f5f5f7]"
     >
-      {icon} {title}
+      <motion.p
+        initial={{
+          opacity: 0,
+          scale: 0.98,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        exit={{
+          opacity: 0,
+          scale: 0.98,
+          filter: "blur(10px)",
+        }}
+        transition={{
+          duration: 0.1,
+          ease: easeInOut,
+        }}
+        className="w-full cursor-pointer gap-4 flex"
+      >
+        {icon} {title}
+      </motion.p>
     </motion.div>
   ) : (
     <motion.div
@@ -126,9 +179,11 @@ const SpecsCard = ({
         damping: 25,
       }}
       //   onClick={() => setOpen(open === title ? null : title)}
-      className=" my-2 h-42 w-120    bg-[#1e1e20] rounded-4xl p-8  text-xl text-[#f5f5f7]"
+      className=" my-2 py-10 backdrop-blur-2xl inline-flex  bg-gray-500/20 rounded-4xl px-8  text-xl text-[#f5f5f7]"
     >
-      <span className=" font-bold">{title}.</span> {description}
+      <p>
+        <span className=" font-bold">{title}.</span> {description}
+      </p>
     </motion.div>
   );
 };
