@@ -56,7 +56,7 @@ export const AppleAccordion = () => {
             alt=""
           />
 
-          <div className=" w-106 absolute bottom-20 left-22">
+          <div className=" w-[26rem] absolute bottom-20 left-22">
             {accordionArray.map((x, index) => (
               <SpecsCard
                 open={open}
