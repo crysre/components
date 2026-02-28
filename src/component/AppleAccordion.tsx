@@ -21,12 +21,12 @@ const imagesObj: Record<string, string> = {
 export const AppleAccordion = () => {
   const [open, setOpen] = useState<string | null>(null);
   return (
-    <div className=" w-full h-400  flex flex-col justify-center items-center bg-[#0f0f10]">
+    <div className=" w-full h-screen  flex flex-col justify-center items-center bg-[#0f0f10]">
       <p className="text-white font-bold text-6xl tracking-wide w-[92%] pb-12 pl-24">
         Take a closer look
       </p>
       <AnimatePresence>
-        <div className=" overflow-hidden relative w-[94%] h-232 rounded-4xl  bg-black  ">
+        <div className=" overflow-hidden relative w-[94%] h-[80%] rounded-4xl  bg-black  ">
           <motion.img
             key={open}
             initial={{
@@ -56,7 +56,7 @@ export const AppleAccordion = () => {
             alt=""
           />
 
-          <div className=" w-106 absolute bottom-40 left-22">
+          <div className=" w-106 absolute bottom-20 left-22">
             {accordionArray.map((x, index) => (
               <SpecsCard
                 open={open}
