@@ -6,7 +6,7 @@ import { VoiceChat } from "./component/VoiceChat";
 function App() {
   return (
     <div className=" font-inter bg-neutral-200 ">
-      <VoiceChat/>
+      <VoiceChat />
       <AppleAccordion />
       <TodoCard />
       <ImageCard />

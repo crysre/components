@@ -22,7 +22,7 @@ export const VoiceChat = ({ participants = PARTICIPANTS }) => {
 
   return (
     <div className="flex justify-center items-center h-200 w-full bg-white">
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout" initial={false}>
         {!open ? (
           <motion.div
             layoutId="voiceCard"
@@ -41,7 +41,12 @@ export const VoiceChat = ({ participants = PARTICIPANTS }) => {
               })}
 
               {overflowCount > 0 && (
-                <button
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.01 }}
+                  key="overFlow"
                   onClick={() => {
                     setOpen(true);
                   }}
@@ -49,7 +54,7 @@ export const VoiceChat = ({ participants = PARTICIPANTS }) => {
                 >
                   <span className="pl-2 text-2xl">+{overflowCount}</span>
                   <ChevronDown />
-                </button>
+                </motion.button>
               )}
             </motion.div>
           </motion.div>
