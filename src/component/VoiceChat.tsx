@@ -3,6 +3,20 @@ import one from "../Assets/one.jpg";
 import { ChevronDown, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
+interface Participant {
+  id: string;
+  avatar: string;
+}
+
+interface ImgCardProps {
+  participant: Participant;
+  className?: string;
+}
+
+interface VoiceChatProps {
+  participants?: Participant[];
+}
+
 const PARTICIPANTS = [
   { id: "u1", avatar: one },
   { id: "u2", avatar: one },
@@ -15,7 +29,7 @@ const PARTICIPANTS = [
 
 const visibleInCollapsed = 4;
 
-export const VoiceChat = ({ participants = PARTICIPANTS }) => {
+export const VoiceChat = ({ participants = PARTICIPANTS }: VoiceChatProps) => {
   const [open, setOpen] = useState(false);
   const visible = participants.slice(0, visibleInCollapsed);
   const overflowCount = Math.max(0, participants.length - visibleInCollapsed);
@@ -112,7 +126,7 @@ export const VoiceChat = ({ participants = PARTICIPANTS }) => {
   );
 };
 
-const ImgCard = ({ participant, className = "" }) => {
+const ImgCard = ({ participant, className = "" }: ImgCardProps) => {
   return (
     <motion.img
       layoutId={`pfp-${participant.id}`}
