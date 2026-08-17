@@ -35,7 +35,8 @@ export const VoiceChat = ({ participants = PARTICIPANTS }: VoiceChatProps) => {
   const overflowCount = Math.max(0, participants.length - visibleInCollapsed);
 
   return (
-    <div className="flex justify-center items-center h-200 w-full bg-white">
+    <div className="flex flex-col justify-center items-center h-200 w-full bg-white">
+      <p className="pb-8 text-2xl">Click to expand ;)</p>
       <AnimatePresence mode="popLayout" initial={false}>
         {!open ? (
           <motion.div

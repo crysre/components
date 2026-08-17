@@ -7,9 +7,9 @@ import { VoiceChat } from "./component/VoiceChat";
 function App() {
   return (
     <div className=" font-inter bg-neutral-200 ">
-      <SlidingButton />
       <VoiceChat />
       <AppleAccordion />
+      <SlidingButton />
       <TodoCard />
       <ImageCard />
     </div>
