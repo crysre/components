@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { AppleAccordion } from "./component/AppleAccordion";
 import { ImageCard } from "./component/ImageCard";
 import { SlidingButton } from "./component/SlidingButton";
@@ -12,6 +13,7 @@ function App() {
       <SlidingButton />
       <TodoCard />
       <ImageCard />
+      <Analytics />
     </div>
   );
 }
